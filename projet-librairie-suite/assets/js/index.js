@@ -67,18 +67,25 @@ window.addEventListener("DOMContentLoaded", function(e) {
 
         newUserManager.login(userEmail, userPassword);
     })
-    
+
     formSign.addEventListener("submit", function(e){
         e.preventDefault();
-        
-        let newUsernamel = document.getElementById("new-username");
-        let newUserEmail = document.getElementById("new-email");
-        let newUserPassword = document.getElementById("new-password");
-        let newUserConfirmPass = document.getElementById("new-pass-confirm");
-        let newUserFirstName = document.getElementById("new-firstName");
-        let newUserLastName = document.getElementById("new-lastName");
-        let newUserProfileImage = document.getElementById("new-profile-picture");
-        
-    })
+
+        let newUsername = document.getElementById("new-username").value;
+        let newUserEmail = document.getElementById("new-email").value;
+        let newUserPassword = document.getElementById("new-password").value;
+        let newUserConfirmPass = document.getElementById("new-pass-confirm").value;
+        let newUserFirstName = document.getElementById("new-firstName").value;
+        let newUserLastName = document.getElementById("new-lastName").value;
+        let newUserProfileImage = document.getElementById("new-profile-picture").value;
+        let id = newUserManager.users.length + 1;
+
+        let newUser = new User(id , newUsername, newUserEmail, newUserPassword, newUserConfirmPass, newUserFirstName, newUserLastName, newUserProfileImage );
+        newUserManager.createUser(newUser);
+        console.log(newUserManager.users);
+        newUserManager.save();
+    });
+
+
 
 })

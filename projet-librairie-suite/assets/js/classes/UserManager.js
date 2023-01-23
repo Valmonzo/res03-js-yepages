@@ -2,7 +2,7 @@ class UserManager {
     #users;
 
     constructor(users) {
-        this.#users = [];
+        this.#users = users;
     };
 
     get users() {
@@ -51,19 +51,32 @@ class UserManager {
     }
 
     createUser(user){
+        let state= 0;
+        let confirmpassword = document.getElementById("new-pass-confirm").value;
         for(let i = 0; i < this.#users.length; i++) {
-            if(this.#users[i].email !== user.email) {
-                this.#users.push(user);
+            if(this.#users[i].email === user.email) {
+                state = 1
             }
 
+        }
+        if(state === 0) {
+            
+            if(user.password !== "" && user.password === confirmpassword) {
+                this.#users.push(user);
+            }
             else {
+                alert("Les mots de passe sont différents");
+            }
+
+        }
+        else {
                 alert(`Désolé ${user.email} est déja utilisé !`);
             }
-        }
 
     }
 
     deleteUser(userId){
+
         for(let i = 0; i< this.#users.length; i++) {
             if(this.#users[i].id === userId) {
                 this.#users.remove(users[i]);
