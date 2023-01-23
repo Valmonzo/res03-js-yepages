@@ -1,0 +1,179 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#homepage {
+  font-family: "Montserrat", sans-serif;
+}
+#homepage > header {
+  height: 15vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+#homepage > header > section {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.6fr;
+}
+#homepage > header > section > button {
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#homepage > header > section > figure {
+  grid-column: 3/4;
+  display: flex;
+  align-items: center;
+}
+#homepage > header > nav {
+  border-bottom: 1px solid black;
+}
+#homepage > main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: 80vh;
+}
+#homepage > main > aside {
+  border-right: 1px solid black;
+  grid-column: 1/2;
+  padding: 5rem 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+#homepage > main > aside nav h2 {
+  font-weight: 500;
+  margin: 1rem 0;
+}
+#homepage > main > aside nav ul {
+  display: none;
+}
+#homepage > main > aside nav ul > li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+#homepage > main > aside nav ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+#homepage > main > aside nav ul > li > a:hover {
+  text-decoration: underline 1px solid black;
+  text-underline-offset: 7px;
+  font-weight: bold;
+  color: grey;
+}
+#homepage > main > aside nav .show {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-weight: 400;
+}
+#homepage > main > section {
+  padding: 2rem;
+}
+#homepage > main > section > h2 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  color: #0077b6;
+}
+#homepage > main > section > section:first-of-type > button {
+  height: 6vh;
+  text-align: center;
+  font-size: 1.1rem;
+  background-color: #023e8a;
+  color: white;
+  border: none;
+  margin-bottom: 4rem;
+  border-radius: 4px;
+  padding: 0 1vw;
+}
+#homepage > main > section > section > table {
+  width: 100%;
+}
+#homepage > main > section > section > table > thead > tr {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 4rem;
+  text-align: left;
+}
+#homepage > main > section > section > table > tbody > tr {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+#homepage > main > section > section > table > tbody > tr > td:last-of-type button {
+  background: none;
+  color: #b50604;
+  border: none;
+  font-size: 1.2rem;
+}
+#homepage > main > section > section > table > tbody > tr:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.border {
+  border-bottom: 1px solid black;
+  border-right: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.border-right {
+  border-right: 1px solid black;
+}
+
+.large {
+  grid-column: 1/3;
+}
+
+/*# sourceMappingURL=style.css.map */

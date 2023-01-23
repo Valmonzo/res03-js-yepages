@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
         let newUserProfileImage = document.getElementById("new-profile-picture").value;
         let id = newUserManager.users.length + 1;
 
-        let newUser = new User(id , newUsername, newUserEmail, newUserPassword, newUserConfirmPass, newUserFirstName, newUserLastName, newUserProfileImage );
+        let newUser = new User(id , newUsername, newUserEmail, newUserPassword, newUserFirstName, newUserLastName, newUserProfileImage );
         newUserManager.createUser(newUser);
         console.log(newUserManager.users);
         newUserManager.save();
