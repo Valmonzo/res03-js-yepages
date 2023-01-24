@@ -110,7 +110,7 @@ class UserManager {
         let stringUsers = JSON.stringify(this.#users);
         localStorage.setItem("thisUsers", stringUsers);
     }
-    
+
 
     load() {
         let  parseUsers = JSON.parse(localStorage.getItem("thisUsers"));
@@ -133,7 +133,7 @@ class UserManager {
             let td5 = document.createElement("td");
             let td6 = document.createElement("td");
             let td7 = document.createElement("td");
-            let tbody = document.querySelector("#homepage main section table tbody");
+            let tbody = document.getElementById("tbody-user");
             let button = document.createElement("button");
             let span = document.createElement("span");
             let span2 = document.createElement("span");
@@ -141,6 +141,7 @@ class UserManager {
 
             span.setAttribute("class", "bi-trash3");
             span2.setAttribute("class", "bi-pen");
+            span2.setAttribute("id", this.#users[i].id);
             button.setAttribute("id", this.#users[i].id);
             button.setAttribute("class", "delete-user");
 
@@ -165,6 +166,7 @@ class UserManager {
             tr.appendChild(td7);
 
             tbody.appendChild(tr);
+
             }
     }
 

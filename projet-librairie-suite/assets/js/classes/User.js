@@ -86,18 +86,52 @@ class User {
             profileImage : this.#profileImage
         };
 
-        return JSON.stringify(user);
+        return user;
 
     }
 
     saveUser(user) {
         let stringUser = JSON.stringify(user);
+        console.log(stringUser);
         localStorage.setItem("thisUser", stringUser);
     }
 
     loadUser() {
         let  parseUser = JSON.parse(localStorage.getItem("thisUser"));
+        /* let parsedUsername = JSON.parse(parseUser.username);
+        let parsedId = JSON.parse(parseUser.id);
+        let parsedFirstName = JSON.parse(parseUser.firstName);
+        let parsedLastName = JSON.parse(parseUser.lastName);
+        let parsedEmail = JSON.parse(parseUser.email);
+        let parsedProfileImage = JSON.parse(parseUser.profileImage); */
+        console.log(parseUser);
+        this.#id = parseUser.id;
+        this.#username = parseUser.username;
+        this.#email = parseUser.email;
+        this.#password = parseUser.password;
+        this.#firstName = parseUser.firstName;
+        this.#lastName = parseUser.lastName;
+        this.#profileImage = parseUser.profileImage;
+
+
     }
+
+    displayUser() {
+        let usernameToLoad = document.getElementById("loadedUsername");
+        let firstNameToLoad = document.getElementById("loadedFirstName");
+        let lastNameToLoad = document.getElementById("loadedLastName");
+        let emailToLoad = document.getElementById("loadedEmail");
+        let profileImageToLoad = document.getElementById("loadedProfileImage");
+
+        usernameToLoad.textContent = this.#username;
+        firstNameToLoad.textContent = this.#firstName;
+        lastNameToLoad.textContent = this.#lastName;
+        emailToLoad.textContent = this.#email;
+        profileImageToLoad.textContent = this.#profileImage;
+
+    }
+
+
 }
 
 export { User };

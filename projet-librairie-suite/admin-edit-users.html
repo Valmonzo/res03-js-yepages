@@ -23,81 +23,51 @@
 
     </head>
 
-    <body id="edit-user">
+    <body id="user-edit-page">
         <header>
         </header>
         <main>
-            <section id="user-tab">
-                <h2>Liste des utilisateurs</h2>
-                <section>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    #
-                                </th>
-                                <th>
-                                    username
-                                </th>
-                                <th>
-                                    email
-                                </th>
-                                <th>
-                                    firstname
-                                </th>
-                                <th>
-                                    lastname
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- <tr>
-                                <td>
-                                    0
-                                </td>
-                                <td>
-                                    Marsh Obrien
-                                </td>
-                                <td>
-                                    24
-                                </td>
-                                <td>
-                                    <span class="bi-person-fill-down" aria-labelledby="Inactif"></span>
-                                </td>
-                                <td>
-                                    <a href=""><span class="bi-eye" aria-labelledby="Voir l'utilisateur"></span></a>
-                                    <a href=""><span class="bi-pen" aria-labelledby="Modifier l'utilisateur"></span></a>
-                                    <button class="delete-user" data-user="0"><span class="bi-trash3" aria-labelledby="Supprimer l'utilisateur"></span></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    Marsh Obrien
-                                </td>
-                                <td>
-                                    24
-                                </td>
-                                <td>
-                                    <span class="bi-person-fill-up" aria-labelledby="Actif"></span>
-                                </td>
-                                <td>
-                                    <a href=""><span class="bi-eye" aria-labelledby="Voir l'utilisateur"></span></a>
-                                    <a href=""><span class="bi-pen" aria-labelledby="Modifier l'utilisateur"></span></a>
-                                    <button class="delete-user" data-user="1"><span class="bi-trash3" aria-labelledby="Supprimer l'utilisateur"></span></button>
-                                </td>
-                            </tr> -->
-                        </tbody>
-                    </table>
-                </section>
-                <a href="admin-create-user.html">Créer un utilisateur</a>
-                <a href="admin-edit-user.html">Modifier un utilisateur</a>
+            <section>
+                <ul>
+                    <li id="loadedUsername"></li>
+                    <li id="loadedFirstName"></li>
+                    <li id="loadedLastName"></li>
+                    <li id="loadedEmail"></li>
+                    <li>
+                        <figure>
+                            <img id="loadedProfileImage">
+                        </figure>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Modifier ses informations</h2>
+                <form>
+                    <fieldset>
+                        <label for="username">New Username</label>
+                        <input type="text" name="username"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="firstName">New FirstName</label>
+                        <input type="text" name="firstName"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="lastName">New LastName</label>
+                        <input type="text" name="lastName"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">New Email</label>
+                        <input type="email" name="email"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="profileImage">New Profil Picture</label>
+                        <input type="file" name="profile-picture" accept="image/png, image/jpeg" id="edit-profile-picture"/>
+                    </fieldset>
+                </form>
             </section>
         </main>
         <footer></footer>
     </body>
-    <script type="module" src="assets/js/admin-users.js"></script>
+    <script type="module" src="assets/js/admin-edit-users.js"></script>
 
 </html>

@@ -52,24 +52,24 @@ table {
   border-spacing: 0;
 }
 
-#homepage {
+#user-list {
   font-family: "Montserrat", sans-serif;
 }
-#homepage > main {
+#user-list > main {
   display: grid;
   height: 80vh;
 }
-#homepage > main > section {
+#user-list > main > section {
   padding: 2rem;
 }
-#homepage > main > section > h2 {
+#user-list > main > section > h2 {
   font-size: 1.6rem;
   text-transform: uppercase;
   margin-bottom: 3rem;
   font-weight: bold;
   color: #0077b6;
 }
-#homepage > main > section > section:first-of-type > button {
+#user-list > main > section > section:first-of-type > button {
   height: 6vh;
   text-align: center;
   font-size: 1.1rem;
@@ -80,26 +80,26 @@ table {
   border-radius: 4px;
   padding: 0 1vw;
 }
-#homepage > main > section > section > table {
+#user-list > main > section > section > table {
   width: 100%;
 }
-#homepage > main > section > section > table > thead > tr {
+#user-list > main > section > section > table > thead > tr {
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 4rem;
   text-align: left;
 }
-#homepage > main > section > section > table > tbody > tr {
+#user-list > main > section > section > table > tbody > tr {
   font-size: 1.2rem;
   line-height: 2.5rem;
 }
-#homepage > main > section > section > table > tbody > tr > td:last-of-type button {
+#user-list > main > section > section > table > tbody > tr > td:last-of-type button {
   background: none;
   color: #b50604;
   border: none;
   font-size: 1.2rem;
 }
-#homepage > main > section > section > table > tbody > tr:not(:last-of-type) {
+#user-list > main > section > section > table > tbody > tr:not(:last-of-type) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .border {
