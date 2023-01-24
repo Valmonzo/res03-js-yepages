@@ -53,12 +53,10 @@ window.addEventListener("DOMContentLoaded", function(e) {
     console.log(newUsers); */
     let newUserManager = new UserManager([]);
     let formLog = document.getElementById("login");
-    console.log(formLog);
     let formSign = document.getElementById("signin");
 
     formLog.addEventListener("submit", function(e) {
         e.preventDefault();
-        console.log("ok");
         let userEmail = document.getElementById("email-login").value;
         console.log(userEmail);
         let userPassword = document.getElementById("password-login").value;

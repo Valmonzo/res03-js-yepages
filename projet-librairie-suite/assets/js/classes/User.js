@@ -89,6 +89,15 @@ class User {
         return JSON.stringify(user);
 
     }
+
+    saveUser(user) {
+        let stringUser = JSON.stringify(user);
+        localStorage.setItem("thisUser", stringUser);
+    }
+
+    loadUser() {
+        let  parseUser = JSON.parse(localStorage.getItem("thisUser"));
+    }
 }
 
 export { User };

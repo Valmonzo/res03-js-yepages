@@ -52,18 +52,20 @@ class UserManager {
         }
     }
 
-    createUser(user){
-        let state= 0;
+    createUser(user) {
+        let state = false;
         let confirmpassword = document.getElementById("new-pass-confirm").value;
-        for(let i = 0; i < this.#users.length; i++) {
-            if(this.#users[i].email === user.email) {
-                state = 1
+
+        for (let i = 0; i < this.#users.length; i++) {
+            if (this.#users[i].email === user.email) {
+                state = true
             }
 
-        }
-        if(state === 0) {
+        };
 
-            if(user.password !== "" && user.password === confirmpassword) {
+        if (state === false) {
+
+            if (user.password !== "" && user.password === confirmpassword) {
                 this.#users.push(user);
             }
             else {
@@ -72,25 +74,33 @@ class UserManager {
 
         }
         else {
-                alert(`Désolé ${user.email} est déja utilisé !`);
-            }
+            alert(`Désolé ${user.email} est déja utilisé !`);
+        }
 
     }
 
     deleteUser(userId){
-
+        let removeTab = [];
         for(let i = 0; i< this.#users.length; i++) {
-            if(this.#users[i].id === userId) {
-                this.#users.remove(users[i]);
+            if(this.#users[i].id !== userId) {
+                removeTab.push(this.#users[i])
             }
         }
+
+        this.#users = removeTab;
+        console.log(this.#users);
     }
 
     editUser(user){
 
         for(let i = 0; i< this.#users.length; i++) {
             if(this.#users[i].id === user.id) {
-                this.#users[i] = user;
+                this.#users[i].username = user.username;
+                this.#users[i].email = user.email;
+                this.#users[i].firstName = user.firstName;
+                this.#users[i].lastName = user.lastName;
+                this.#users[i].profileImage = user.profileImage;
+
 
             }
         }
@@ -100,6 +110,7 @@ class UserManager {
         let stringUsers = JSON.stringify(this.#users);
         localStorage.setItem("thisUsers", stringUsers);
     }
+    
 
     load() {
         let  parseUsers = JSON.parse(localStorage.getItem("thisUsers"));
@@ -108,6 +119,11 @@ class UserManager {
             let newUser = new User(parseData.id, parseData.username, parseData.email, parseData.password, parseData.firstName, parseData.lastName, parseData.profileImage);
             this.#users.push(newUser);
         }
+
+    }
+
+    displayStorage() {
+
         for(let i = 0; i < this.#users.length; i++) {
             let tr = document.createElement("tr");
             let td1 = document.createElement("td");
@@ -115,7 +131,21 @@ class UserManager {
             let td3 = document.createElement("td");
             let td4 = document.createElement("td");
             let td5 = document.createElement("td");
+            let td6 = document.createElement("td");
+            let td7 = document.createElement("td");
             let tbody = document.querySelector("#homepage main section table tbody");
+            let button = document.createElement("button");
+            let span = document.createElement("span");
+            let span2 = document.createElement("span");
+
+
+            span.setAttribute("class", "bi-trash3");
+            span2.setAttribute("class", "bi-pen");
+            button.setAttribute("id", this.#users[i].id);
+            button.setAttribute("class", "delete-user");
+
+
+            button.appendChild(span);
 
             td1.textContent = this.#users[i].id;
             td2.textContent = this.#users[i].username;
@@ -123,12 +153,16 @@ class UserManager {
             td4.textContent = this.#users[i].firstName;
             td5.textContent = this.#users[i].lastName;
 
+            td6.appendChild(button);
+            td7.appendChild(span2)
 
             tr.appendChild(td1);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
             tr.appendChild(td5);
+            tr.appendChild(td6);
+            tr.appendChild(td7);
 
             tbody.appendChild(tr);
             }
